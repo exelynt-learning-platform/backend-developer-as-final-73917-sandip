@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;MODE=PostgreSQL
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    show-sql: false
+
+app:
+  jwt:
+    secret: test-only-secret-key-for-jwt-signing-must-be-long-enough-1234567890
+    expiration-ms: 3600000
+  seed:
+    enabled: true
+    admin-username: admin
+    admin-password: Admin@123
+    user-username: user
+    user-password: User@123
